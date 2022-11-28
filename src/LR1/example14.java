@@ -1,21 +1,18 @@
 package LR1;
 
+import java.math.BigInteger;
 import java.util.Scanner;
 
 public class example14 {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        int flagOrder = sc.nextInt() < 0 ? -1 : 1;
-        int counter = 1;
-        while(sc.hasNextInt()) {
-            flagOrder += (sc.nextInt() - flagOrder) < 0 ? -1 : 1;
-            counter++;
+        Scanner scanner = new Scanner(System.in);
+        int userInput = scanner.nextInt();
+        if (userInput < Math.sqrt(Integer.MAX_VALUE))
+            System.out.println(userInput * userInput);
+        else {
+            BigInteger bi = new BigInteger(String.valueOf(userInput));
+            System.out.println(bi.multiply(bi));
         }
-        if (counter == 1)
-            System.out.println("The order is not defined!");
-        else if (counter == flagOrder)
-            System.out.println("Grow");
-        else System.out.println("Decreases");
     }
 }
 
