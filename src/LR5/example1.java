@@ -6,21 +6,24 @@ public class example1 {
         Example1.viewCode();
 
         Example1.Set('A');
-        System.out.println("Char code = " + Example1.getCodeSymbol()+"\n");
+        System.out.println("Char code = " + Example1.getCodeSymbol() + "\n");
 
         Example1.viewCode();
     }
 }
     class Example {
-    private char ch;
-    public void Set(char ch1) {
-        this.ch = ch1;
+        private char ch;
+
+        public void Set(char ch1) {
+            this.ch = ch1;
+        }
+
+        public int getCodeSymbol() {
+            return (int) ch;
+        }
+
+        public void viewCode() {
+            System.out.println("ch1 = " + ch);
+            System.out.println("ch1 = " + getCodeSymbol() + "\n");
+        }
     }
-    public int getCodeSymbol() {
-        return (int) ch;
-    }
-    public void viewCode() {
-        System.out.println("ch1 = " + ch);
-        System.out.println("ch1 = " + getCodeSymbol()+"\n");
-    }
-}
